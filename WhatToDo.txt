@@ -1,2 +1,8 @@
 JavaScript Tutorial
 https://www.youtube.com/playlist?list=PL9ZqDLjDY8Pn0qQ_QAIUbQ0_MGPBO4rZC
+
+Learning JavaScript Design Patterns
+https://addyosmani.com/resources/essentialjsdesignpatterns/book/index.html#constructorpatternjavascript
+
+JavaScript Patterns Collection
+http://shichuan.github.io/javascript-patterns/#general-patterns
