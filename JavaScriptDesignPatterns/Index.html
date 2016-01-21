@@ -3,6 +3,7 @@
 <head>
     <title></title>
     <script src="AddyOsmani_Scripts/JS/01_ConstructorPattern/ConstructorPattern.js"></script>
+    <script src="AddyOsmani_Scripts/JS/02_ModulePattern/ModulePattern.js"></script>
 </head>
 
 <body>
@@ -13,20 +14,70 @@
         //
         //ConstructorPattern
         //
-        console.log(newObject["someOtherKey"]);
 
-        // Usage:
+        ////console.log(newObject["someOtherKey"]);
 
-        var civic = new Car("Honda Civic", 2009, 20000);
-        var mondeo = new Car("Ford Mondeo", 2010, 5000);
+        ////var civic = new Car("Honda Civic", 2009, 20000);
+        ////var mondeo = new Car("Ford Mondeo", 2010, 5000);
 
-        console.log(civic.toString());
-        console.log(mondeo.toString());
+        ////console.log(civic.toString());
+        ////console.log(mondeo.toString());
 
         //
         //ModulePattern
         //
-        
+
+        // Outputs: Where in the world is Paul Irish today?
+        myModule.saySomething();
+
+        // Outputs: Caching is: enabled
+        myModule.reportMyConfig();
+
+        // Outputs: fr
+        myModule.updateMyConfig({
+            language: "fr",
+            useCaching: false
+        });
+
+        // Outputs: Caching is: disabled
+        myModule.reportMyConfig();
+
+        // Increment our counter
+        testModule.incrementCounter(); testModule.incrementCounter();
+
+        // Check the counter value and reset
+        // Outputs: counter value prior to reset: 1
+        testModule.resetCounter();
+
+        // basketModule returns an object with a public API we can use
+
+        basketModule.addItem({
+            item: "bread",
+            price: 0.5
+        });
+
+        basketModule.addItem({
+            item: "butter",
+            price: 0.3
+        });
+
+        // Outputs: 2
+        console.log(basketModule.getItemCount());
+
+        // Outputs: 0.8
+        console.log(basketModule.getTotal());
+
+        // However, the following will not work:
+
+        // Outputs: undefined
+        // This is because the basket itself is not exposed as a part of our
+        // public API
+        console.log(basketModule.basket);
+
+        // This also won't work as it only exists within the scope of our
+        // basketModule closure, but not in the returned public object
+        console.log(basket);
+
     </script>
 </body>
 </html>

@@ -104,6 +104,6 @@ function Car(model, year, miles)
     this.miles = miles;
 
     this.toString = function () {
-        return this.model + " has done" + this.miles + "miles";
+        return this.model + " has done " + this.miles + " miles";
     }
 }
